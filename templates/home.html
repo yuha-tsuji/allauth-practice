@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Todolist</h1>
+      <p class="lead">{{ user.email }}さん、Todolistを作って毎日を効率的に過ごしましょう。</p>
+    </div>
+</div>
+{% endblock header %}
+
+{% block content %}
+<div class="container">
+    {% for item in object_list %}
+    <div class="alert alert-{{ item.priority }}" role="alert">
+        <p>{{ item.title }} 期日：{{ item.duedate }} </p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content%}
